@@ -13,7 +13,7 @@ import { ListTask } from '../../Models/Task';
 export class RegisterComponent {
 
   btnAction = "Cadastrar";
-  descTitle = "Criar Tarefa";
+  descTitle = "Criar tarefa";
 
   constructor(private taskService:TaskService, private router: Router){}
 

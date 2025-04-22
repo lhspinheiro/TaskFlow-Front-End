@@ -14,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditComponent {
 
   btnAction = "Editar";
-  descTitle = "Editar Tarefa";
+  descTitle = "Editar tarefa";
   task!: ListTask;
 
   constructor(private taskService:TaskService, private router:Router, private route:ActivatedRoute){}
