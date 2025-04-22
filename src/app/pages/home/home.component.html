@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <button class="btn btn-success w-100" [routerLink]="['/register']" routerLinkActive="router-link-active" > Cadastrar uma nova Task</button>
+    <div>
+        <label class="form-label">Pesquisar: </label>
+        <input class="form-control" type="text" placeholder="Qual task deseja buscar?" (input)="search($event)"/>
+    </div>
+
+    <table class="table table-hover table-bordered mt-5">
+        <thead class="table-dark">
+            <tr>
+                <th>id</th>
+                <th>Titulo</th>
+                <th>Descrição</th>
+                <th>Prazo</th>
+                <th>Situação</th>
+                <th>Prioridade</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (task.length > 0) {
+                @for (tasks of task; track $index) {
+                    <tr>
+                        <td>{{tasks.id}}</td>
+                        <td>{{tasks.title}}</td>
+                        <td>{{tasks.description}}</td>
+                        <td>{{tasks.dueDate}}</td>
+                        <td>{{tasks.isCompleted}}</td>
+                        <td>{{tasks.priority}}</td>
+                        <td>
+                            <button class="btn btn-warning mx-2" [routerLink]="['/edit', tasks.id]">Editar</button>
+                            <button class="btn btn-danger mx-2" (click)="delet(tasks.id)">Excluir</button>                        
+                        </td>
+                    </tr>
+                }
+            }
+            @else {
+                <tr class="text-center">
+                    <td colspan="6">Nenhum usuário cadastrado</td>
+                </tr>
+            }
+
+        </tbody>
+
+
+    </table>
+</div>
