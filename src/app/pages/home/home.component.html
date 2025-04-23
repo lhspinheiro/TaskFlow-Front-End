@@ -1,10 +1,13 @@
-<div class="container mt-5">
-    
-    <div>
-       
-        <input class="form-control" type="text" placeholder="Qual task deseja buscar?" (input)="search($event)"/>
-    </div>
+<div class="tes">
+    <div class="input-container">
+        <input type="text" id="input" required="" (input)="search($event)">
+        <label for="input" class="label">Buscar tarefa</label>
+        <div class="underline"></div>                
+    </div>  
+</div>
 
+<div class="container mt-5">    
+    <!--- <input class="form-control input" type="text" placeholder="Qual task deseja buscar?" (input)="search($event)"/> -->
     <button class="btn btn-success mt-5" [routerLink]="['/register']" routerLinkActive="router-link-active" > Cadastrar uma nova Task</button>
 
     <table class="table table-borderless table-hover mt-5">
@@ -18,7 +21,7 @@
                 <th>Prioridade</th>
                 <th></th>
             </tr>
-        </thead>
+        </thead>   
 
         <tbody>
             @if (task.length > 0) {
@@ -43,8 +46,6 @@
                 </tr>
             }
 
-        </tbody>
-
-
+        </tbody>   
     </table>
 </div>
